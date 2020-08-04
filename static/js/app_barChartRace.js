@@ -42,8 +42,9 @@ function init() {
 
     // console.log(year);
     
-    d3.json("/api/total-medals").then(function(data) { 
-      
+    //d3.json("/api/total-medals").then(function(data) { 
+    d3.json("/../assets/output/Summer-Medals-1980-2016.json").then(function(data) { 
+    
       data.forEach(d => {
         d.total_medals = isNaN(d.total_medals) ? 0 : d.total_medals,
         d.colour = d3.hsl(Math.random()*360,0.75,0.75)
