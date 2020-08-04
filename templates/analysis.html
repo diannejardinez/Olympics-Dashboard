@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <title>Olympics</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <link rel="stylesheet" href="../static/assets/css/sl_styles.css">
+
+  <link rel="icon" href="data:,"> <!-- to avoid favicon error -->
+
+</head>
+
+<body>
+  <!-- Start of navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid navbar-custom">
+
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="row">
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <div class="col-xs-9 phone-nav">
+            <a class="navbar-brand" href="/" id="logo">Olympics</a>
+            </a>
+          </div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+          <ul class="nav navbar-nav navbar-right navbar-right-custom">
+
+            <li><a href="/olympics/data">Data</a></li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Visualizations<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/olympics/chart1">Gender & BodyComposition</a></li>
+                <li><a href="/olympics/chart2">Medals Vs GDP</a></li>
+                <li><a href="/olympics/chart3">Medals World View</a></li>
+                <li><a href="/olympics/chart4">Sport Choropleth</a></li>
+              </ul>
+            </li>
+
+            <li><a href="/olympics/analysis">Analysis</a></li>
+
+            <li><a href="/olympics/olympic_facts">Olympic-Facts</a></li>
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+
+      </div>
+    </div><!-- /.container-fluid -->
+  </nav>
+  <!-- End of navbar -->
+  
+  
+  <!-- Start of wrapper with image -->
+
+  <div class="wrapper">
+
+    <div class="hero text-center">
+      <h1>Analysis</h1>
+      <p></p>
+    </div>
+
+    <!-- Analysis -->
+    <div class = 'row col-md-12 mx-auto'>
+
+      <div class = 'container-fluid card'>
+        <article> 
+          <!-- Start Analysis Chart1 -->
+                <p class="text-muted text-center">Age and Body Composition Analysis</p>
+                <p class="small text-muted text-center">We analyzed Olympians to see the spread of age, height, and weight across the sports for women and men</p>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                    <th></th>
+                    <th class="text-center"><h5>Women</h5></th>
+                    <th class="text-center"><h5>Men</h5></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><h5>Age</h5></td>
+                      <td>
+                 <ul>
+              <li>The <strong class="text-warning">oldest</strong> ages were from Cycling and Snowboarding, specifically Kristin Ann Armstrong from team USA during the 2016 Summer Olympics in the "Cycling Women's Individual Time Trial" at age 42.</li><br>
+              <li>The <strong class="text-warning">youngest</strong> ages were from Swimming, specifically Petra Thmer from team Germany during the Summer 1976 Olympics was the youngest in the "Swimming Women's 400 metres Freestyle" at age 15.</li>
+            <ul>
+            </td>
+            <td>
+            <ul>
+            <li>The <strong class="text-warning">oldest</strong> ages were from Cycling and Figure Skating, specifically Vyacheslav Vladimirovich Yekimov from team Russia during the 2004 Summer Olympics  in the "Cycling Men's Individual Time Trial" at age 38.</li><br>
+            <li>The <strong class="text-warning">youngest</strong> ages were from Swimming and Snowboarding, specifically Charles Meldrum "Charlie" Daniels from team USA during the 1904 Olympics was the youngest in the "Swimming Men's 4 x 50 Yard Freestyle Relay" at age 19.</li></ul></td>
+          </tr>
+          <tr>
+          <td><h5>Height</h5></td>
+          <td>
+            <ul>
+            <li>The <strong class="text-warning">tallest</strong> heights were from Basketball, Rowing, and Volleyball. In the "Women's Basketball" sport event, Ujana Semjonova was at 6.8 feet during the 1976 Summer Olympics from team Russia.</li><br>
+            <li>The <strong class="text-warning">shortest</strong> heights were from Weightlifting, Judo and Gymnastics. Wang Mingjuan from team China during the 2012 Summer Olympics was the shortest in the "Weightlifting Women's Flyweight" with a height of 4.9 feet.</li>
+            </ul>
+          </td>
+          <td><ul>
+          <li>The <strong class="text-warning">tallest</strong> heights were from Basketball, Boxing, and Wrestling. In the "Men's Basketball" sport event, Arvydas Romas Sabonis was at 7.3 feet during the 1988 Summer Olympics from team Russia.</li><br>
+          <li>The <strong class="text-warning">shortest</strong> heights were from Weightlifting, and Wrestling. Aleksandr Nikiforovich Voronin from team Russia during the 1976 Summer Olympics was the shorts in the "Weightlifting Men's Flyweight" with a height of 4.7 feet.</li></ul></td>
+          </tr>
+          <tr>
+          <td><h5>Weight</h5></td>
+          <td><ul>
+          <li>The <strong class="text-warning">heaviest</strong> weights were in Weightlifting and Rowing. In the "Weightlifting Women's Super-Heavyweight" sport event, Zhou Lulu was at 293 pounds during the 2012 Summer Olympics from team China.</li><br>
+          <li>The <strong class="text-warning">lightest</strong> weights were from Gymnastics and Figure Skating, specifically Deng Linlin from team China during the 2012 Summer Olympics was the lightest in the "Gymnastics Women's Balance Beam" at 74 pounds.</li>
+          </ul>
+          </td>
+          <td><ul>
+          <li>The <strong class="text-warning">heaviest</strong> weights were in Weightlifting and Wrestling. In the "Weightlifting Men's Super-Heavyweight" sport event, Andrey Ivanovich Chemerkin was at 374 pounds during the 1996 Summer Olympics from team Russia.</li><br>
+          <li>The <strong class="text-warning">lightest</strong> weights were from Weightlifting and Wrestling as well, specifically Roman Mikhaylovich Dmitriyev from team Russia during the 1972 Summer Olympics was the lightest in the "Wrestling Men's Light-Flyweight, Freestyle" at 105 pounds.</li>
+          </ul>
+                    </td>
+                    </tr>
+                  </tbody>
+                </table>
+        </article>
+      </div>
+
+      <!-- 
+      <div class = 'container-fluid card'>
+        <article>  
+            Analysis here
+        </article>
+      </div>
+
+      <div class = 'container-fluid card'>
+        <article>  
+            Analysis here
+        </article>
+      </div>
+
+      <div class = 'container-fluid card'>
+        <article>  
+            Analysis here
+        </article>
+      </div>
+
+      <div class = 'container-fluid card'>
+        <article>  
+            Analysis here
+        </article>
+      </div>
+      -->
+
+    </div>
+
+    <footer class="footer">
+        <span class="bottom">Olympics Dashboard</span>
+    </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+
+  <!--<script type="text/javascript" src="../static/js/barChartRace.js"> </script>-->
+
+</body>
+
+</html>
