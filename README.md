@@ -11,10 +11,6 @@ https://latha-g.github.io/Olympics-Dashboard/.
 
 **Data Source** : [Kaggle Olympics Dataset](https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results)
 
-**Rendered** : Python Flask-powered RESTful API
-
-**Database** : PostgreSQL with pgAdmin 4
-
 **Visualizations** : 
 - Racing Barchart with D3.js for SVG chart
 - Plotly.js Barchart
