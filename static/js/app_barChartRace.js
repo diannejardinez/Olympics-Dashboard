@@ -36,14 +36,14 @@ function init() {
      .attr('x', width-5)
      .attr('y', height-5)
      .style('text-anchor', 'end')
-     .html('Source: Dataset on Kaggle');
+     //.html('Source: Dataset on Kaggle');
 
     let year = 1980;
 
-    // console.log(year);
+    console.log(year);
     
     //d3.json("/api/total-medals").then(function(data) { 
-    d3.csv("static/assets/output/Summer-Medals-1980-2016.csv").then(function(data) { 
+    d3.csv("../static/assets/output/Summer-Medals-1980-2016.csv").then(function(data) { 
     
       console.log(data);
 
@@ -51,9 +51,7 @@ function init() {
         d.Medals = isNaN(d.Medals) ? 0 : d.Medals,
         d.colour = d3.hsl(Math.random()*360,0.75,0.75)
       });
-      
-      console.log(data);
-    
+          
       let yearSlice = data.filter(d => d.year == year && !isNaN(d.Medals))
                           .sort((a,b) => b.Medals - a.Medals)
                           .slice(0, top_n);
