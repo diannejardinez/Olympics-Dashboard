@@ -1,17 +1,11 @@
-
 https://latha-g.github.io/Olympics-Dashboard/.
 
 # Visualization Project: Olympics 1896 - 2016
 
-<<<<<<< HEAD
 **Team** : Aastha Arora, Dianne Jardinez, Duong Luu, Ritika Bhansali, and Swarna Guntaka 
 =======
-**Team** : Aastha Arora, Dianne Jardinez, Duong Luu, Ritika Bhansali, and Swarna Guntaka
->>>>>>> 99ab6775adeb98aca73bd42aae40b94fcb2383c2
-
 
 [Presentation](https://docs.google.com/presentation/d/15phHbRS-Q3sLNHk0l2hDTo6bSfimbzLvr5rNNoY-aXc/edit) (Google slides)
-
 
 **Data Source** : [Kaggle Olympics Dataset](https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results)
 
