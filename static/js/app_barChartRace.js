@@ -40,12 +40,12 @@ function init() {
 
     let year = 1980;
 
-    console.log(year);
+    // console.log(year);
     
     //d3.json("/api/total-medals").then(function(data) { 
     d3.csv("../static/assets/output/Summer-Medals-1980-2016.csv").then(function(data) { 
     
-      console.log(data);
+      // console.log(data);
 
       data.forEach(d => {
         d.Medals = isNaN(d.Medals) ? 0 : d.Medals,
@@ -58,7 +58,7 @@ function init() {
   
       yearSlice.forEach((d,i) => d.rank = i);
     
-      console.log('yearSlice: ', yearSlice)
+      // console.log('yearSlice: ', yearSlice)
   
       let x = d3.scaleLinear()
                 .domain([0, d3.max(yearSlice, d => d.Medals)])
@@ -70,7 +70,8 @@ function init() {
   
       let xAxis = d3.axisTop()
                     .scale(x)
-                    .ticks(width > 50 ? 5:2)
+                    .ticks(width)
+                    // .ticks(width > 50 ? 5:2)
                     .tickSize(-(height-margin.top-margin.bottom))
                     .tickFormat(d => d3.format(',')(d));
   
@@ -127,7 +128,7 @@ function init() {
 
           yearSlice.forEach((d,i) => d.rank = i);
     
-          console.log('IntervalYear: ', yearSlice);
+          // console.log('IntervalYear: ', yearSlice);
 
           x.domain([0, d3.max(yearSlice, d => d.Medals)]); 
     
