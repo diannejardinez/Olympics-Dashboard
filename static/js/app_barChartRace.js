@@ -3,16 +3,16 @@ init();
 function init() {
 
     var svg = d3.select(".barChartRace").append("svg")
-      .attr("width", 1000)
-      .attr("height", 1000);
+      .attr("width", 1500)
+      .attr("height", 600);
       // .attr("width", 1000)
       // .attr("height", 600);
     
     
     var top_n = 10;
     var tickDuration = 3000;
-    var height = 1000;
-    var width = 1000;
+    var height = 600;
+    var width = 1500;
     // var height = 600;
     // var width = 1000;
 
