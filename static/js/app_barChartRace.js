@@ -10,7 +10,7 @@ function init() {
     var tickDuration = 3000;
 
     var height = 600;
-    var width = 960;
+    var width = 1000;
     
     const margin = {
       top: 80,
