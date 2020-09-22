@@ -3,7 +3,7 @@ init();
 function init() {
 
     var svg = d3.select(".barChartRace").append("svg")
-      .attr("width", 1500)
+      .attr("width", 960)
       .attr("height", 600);
       // .attr("width", 1000)
       // .attr("height", 600);
@@ -11,8 +11,8 @@ function init() {
     
     var top_n = 10;
     var tickDuration = 3000;
-    var height = 600;
-    var width = 1500;
+    var height = 960;
+    var width = 600;
     // var height = 600;
     // var width = 1000;
 
@@ -38,19 +38,20 @@ function init() {
    
     let caption = svg.append('text')
      .attr('class', 'caption')
-     .attr('x', width-5)
+     .attr('x', width)
+      // .attr('x', width-5)
      .attr('y', height-5)
      .style('text-anchor', 'end')
      //.html('Source: Dataset on Kaggle');
 
     let year = 1980;
 
-    console.log(year);
+    // console.log(year);
     
     //d3.json("/api/total-medals").then(function(data) { 
     d3.csv("../static/assets/output/Summer-Medals-1980-2016.csv").then(function(data) { 
     
-      console.log(data);
+      // console.log(data);
 
       data.forEach(d => {
         d.Medals = isNaN(d.Medals) ? 0 : d.Medals,
@@ -75,9 +76,15 @@ function init() {
   
       let xAxis = d3.axisTop()
                     .scale(x)
-                    .ticks(width > 50 ? 5:2)
+                    .ticks(width > 500 ? 5:2)
                     .tickSize(-(height-margin.top-margin.bottom))
                     .tickFormat(d => d3.format(',')(d));
+
+      // let xAxis = d3.axisTop()
+      //               .scale(x)
+      //               .ticks(width > 50 ? 5:2)
+      //               .tickSize(-(height-margin.top-margin.bottom))
+      //               .tickFormat(d => d3.format(',')(d));
   
       svg.append('g')
           .attr('class', 'axis xAxis')
