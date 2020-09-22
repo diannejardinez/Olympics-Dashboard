@@ -5,6 +5,9 @@ function init() {
     var svg = d3.select(".barChartRace").append("svg")
       .attr("width", 1000)
       .attr("height", 600)
+      .classed("svg-container", true)
+      .attr("preserveAspectRatio", "xMaxYMin meet")
+      .attr("viewBox", "0 0 600 400")
     
     var top_n = 10;
     var tickDuration = 3000;
@@ -70,7 +73,7 @@ function init() {
   
       let xAxis = d3.axisTop()
                     .scale(x)
-                    .ticks(width > 50 ? 5:2)
+                    .ticks(width > 50 ? 3:2)
                     .tickSize(-(height-margin.top-margin.bottom))
                     .tickFormat(d => d3.format(',')(d));
   
