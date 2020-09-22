@@ -3,7 +3,7 @@ init();
 function init() {
 
 var svg = d3.select("body").append("svg")
-      .attr("width", 960)
+      .attr("width", 1000)
       .attr("height", 600);
     
     
@@ -12,7 +12,7 @@ var svg = d3.select("body").append("svg")
     
     var top_n = 12;
     var height = 600;
-    var width = 960;
+    var width = 1000;
     
     const margin = {
       top: 80,
@@ -135,7 +135,7 @@ var svg = d3.select("body").append("svg")
      .style('stroke-width', strokeWidth)
      .style('stroke-linejoin', 'round')
      .style('opacity', 1);
-     
+
 
 
 //     var svg = d3.select(".barChartRace").append("svg")
