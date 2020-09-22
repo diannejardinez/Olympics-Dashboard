@@ -5,15 +5,14 @@ function init() {
     var svg = d3.select(".barChartRace").append("svg")
       .attr("width", 1000)
       .attr("height", 600)
-      .classed("svg-container", true)
-      .attr("preserveAspectRatio", "xMaxYMin meet")
-      .attr("viewBox", "0 0 600 400")
+
+
     
     var top_n = 10;
     var tickDuration = 3000;
 
     var height = 600;
-    var width = 960;
+    var width = 1000;
     
     const margin = {
       top: 80,
@@ -21,6 +20,8 @@ function init() {
       bottom: 5,
       left: 0
     };
+
+
   
     let barPadding = (height-(margin.bottom+margin.top))/(top_n*5);
       
