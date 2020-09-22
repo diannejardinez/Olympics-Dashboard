@@ -1,3 +1,6 @@
+  
+
+
 init();
 
 function init() {
@@ -5,21 +8,16 @@ function init() {
     var svg = d3.select(".barChartRace").append("svg")
       .attr("width", 960)
       .attr("height", 600);
-      // .attr("width", 1000)
-      // .attr("height", 600);
-    
     
     var top_n = 10;
     var tickDuration = 3000;
-    var height = 960;
-    var width = 600;
-    // var height = 600;
-    // var width = 1000;
 
+    var height = 600;
+    var width = 960;
     
     const margin = {
       top: 80,
-      right: 0,     
+      right: 0,
       bottom: 5,
       left: 0
     };
@@ -38,28 +36,27 @@ function init() {
    
     let caption = svg.append('text')
      .attr('class', 'caption')
-     .attr('x', width)
-      // .attr('x', width-5)
+     .attr('x', width-5)
      .attr('y', height-5)
      .style('text-anchor', 'end')
-     //.html('Source: Dataset on Kaggle');
+     .html('Source: Dataset on Kaggle');
 
     let year = 1980;
 
     // console.log(year);
     
-    //d3.json("/api/total-medals").then(function(data) { 
+    // d3.json("/api/total-medals").then(function(data) { 
     d3.csv("../static/assets/output/Summer-Medals-1980-2016.csv").then(function(data) { 
-    
-      // console.log(data);
-
+      
       data.forEach(d => {
-        d.Medals = isNaN(d.Medals) ? 0 : d.Medals,
+        d.total_medals = isNaN(d.total_medals) ? 0 : d.total_medals,
         d.colour = d3.hsl(Math.random()*360,0.75,0.75)
       });
-          
-      let yearSlice = data.filter(d => d.year == year && !isNaN(d.Medals))
-                          .sort((a,b) => b.Medals - a.Medals)
+      
+      console.log(data);
+    
+      let yearSlice = data.filter(d => d.year == year && !isNaN(d.total_medals))
+                          .sort((a,b) => b.total_medals - a.total_medals)
                           .slice(0, top_n);
   
       yearSlice.forEach((d,i) => d.rank = i);
@@ -67,7 +64,7 @@ function init() {
       console.log('yearSlice: ', yearSlice)
   
       let x = d3.scaleLinear()
-                .domain([0, d3.max(yearSlice, d => d.Medals)])
+                .domain([0, d3.max(yearSlice, d => d.total_medals)])
                 .range([margin.left, width-margin.right-65]);
   
       let y = d3.scaleLinear()
@@ -76,15 +73,9 @@ function init() {
   
       let xAxis = d3.axisTop()
                     .scale(x)
-                    .ticks(width > 500 ? 5:2)
+                    .ticks(width > 50 ? 5:2)
                     .tickSize(-(height-margin.top-margin.bottom))
                     .tickFormat(d => d3.format(',')(d));
-
-      // let xAxis = d3.axisTop()
-      //               .scale(x)
-      //               .ticks(width > 50 ? 5:2)
-      //               .tickSize(-(height-margin.top-margin.bottom))
-      //               .tickFormat(d => d3.format(',')(d));
   
       svg.append('g')
           .attr('class', 'axis xAxis')
@@ -99,7 +90,7 @@ function init() {
           .append('rect')
           .attr('class', 'bar')
           .attr('x', x(0)+1)
-          .attr('width', d => x(d.Medals))
+          .attr('width', d => x(d.total_medals))
           .attr('y', d => y(d.rank)+5)
           .attr('height', y(1)-y(0)-barPadding)
           .style('fill', d => d.colour);
@@ -109,19 +100,19 @@ function init() {
           .enter()
           .append('text')
           .attr('class', 'label')
-          .attr('x', d => x(d.Medals)-8)
+          .attr('x', d => x(d.total_medals)-8)
           .attr('y', d => y(d.rank)+5+((y(1)-y(0))/2)+1)
           .style('text-anchor', 'end')
           .html(d => d.country);
-     
+     
       svg.selectAll('text.valueLabel')
           .data(yearSlice, d => d.country)
           .enter()
           .append('text')
           .attr('class', 'valueLabel')
-          .attr('x', d => x(d.Medals)+5)
+          .attr('x', d => x(d.total_medals)+5)
           .attr('y', d => y(d.rank)+5+((y(1)-y(0))/2)+1)
-          .text(d => d3.format(',.0f')(d.Medals));
+          .text(d => d3.format(',.0f')(d.total_medals));
 
       let yearText = svg.append('text')
                         .attr('class', 'yearText')
@@ -133,15 +124,15 @@ function init() {
     
       let ticker = d3.interval(e => {
 
-          yearSlice = data.filter(d => d.year == year && !isNaN(d.Medals))
-                          .sort((a,b) => b.Medals - a.Medals)
+          yearSlice = data.filter(d => d.year == year && !isNaN(d.total_medals))
+                          .sort((a,b) => b.total_medals - a.total_medals)
                           .slice(0,top_n);
 
           yearSlice.forEach((d,i) => d.rank = i);
     
           console.log('IntervalYear: ', yearSlice);
 
-          x.domain([0, d3.max(yearSlice, d => d.Medals)]); 
+          x.domain([0, d3.max(yearSlice, d => d.total_medals)]); 
     
           svg.select('.xAxis')
               .transition()
@@ -156,7 +147,7 @@ function init() {
             .append('rect')
             .attr('class', d => `bar ${d.country.replace(/\s/g,'_')}`)
             .attr('x', x(0)+1)
-            .attr( 'width', d => x(d.Medals))
+            .attr( 'width', d => x(d.total_medals))
             .attr('y', d => y(top_n+1)+5)
             .attr('height', y(1)-y(0)-barPadding)
             .style('fill', d => d.colour)
@@ -169,7 +160,7 @@ function init() {
             .transition()
               .duration(tickDuration)
               .ease(d3.easeLinear)
-              .attr('width', d => x(d.Medals))
+              .attr('width', d => x(d.total_medals))
               .attr('y', d => y(d.rank)+5);
             
           bars
@@ -177,7 +168,7 @@ function init() {
             .transition()
               .duration(tickDuration)
               .ease(d3.easeLinear)
-              .attr('width', d => x(d.Medals))
+              .attr('width', d => x(d.total_medals))
               .attr('y', d => y(top_n+1)+5)
               .remove();
 
@@ -188,7 +179,7 @@ function init() {
             .enter()
             .append('text')
             .attr('class', 'label')
-            .attr('x', d => x(d.Medals)-8)
+            .attr('x', d => x(d.total_medals)-8)
             .attr('y', d => y(top_n+1)+5+((y(1)-y(0))/2))
             .style('text-anchor', 'end')
             .html(d => d.country)    
@@ -201,7 +192,7 @@ function init() {
             .transition()
             .duration(tickDuration)
               .ease(d3.easeLinear)
-              .attr('x', d => x(d.Medals)-8)
+              .attr('x', d => x(d.total_medals)-8)
               .attr('y', d => y(d.rank)+5+((y(1)-y(0))/2)+1);
     
           labels
@@ -209,7 +200,7 @@ function init() {
             .transition()
               .duration(tickDuration)
               .ease(d3.easeLinear)
-              .attr('x', d => x(d.Medals)-8)
+              .attr('x', d => x(d.total_medals)-8)
               .attr('y', d => y(top_n+1)+5)
               .remove();
 
@@ -219,9 +210,9 @@ function init() {
             .enter()
             .append('text')
             .attr('class', 'valueLabel')
-            .attr('x', d => x(d.Medals)+5)
+            .attr('x', d => x(d.total_medals)+5)
             .attr('y', d => y(top_n+1)+5)
-            .text(d => d3.format(',.0f')(d.Medals))
+            .text(d => d3.format(',.0f')(d.total_medals))
             .transition()
               .duration(tickDuration)
               .ease(d3.easeLinear)
@@ -231,10 +222,10 @@ function init() {
             .transition()
               .duration(tickDuration)
               .ease(d3.easeLinear)
-              .attr('x', d => x(d.Medals)+5)
+              .attr('x', d => x(d.total_medals)+5)
               .attr('y', d => y(d.rank)+5+((y(1)-y(0))/2)+1)
               .tween("text", function(d) {
-                  let i = d3.interpolateRound(d.Medals, d.Medals);
+                  let i = d3.interpolateRound(d.total_medals, d.total_medals);
                   return function(t) {
                     this.textContent = d3.format(',')(i(t));
                   };
@@ -245,7 +236,7 @@ function init() {
               .transition()
                 .duration(tickDuration)
                 .ease(d3.easeLinear)
-                .attr('x', d => x(d.Medals)+5)
+                .attr('x', d => x(d.total_medals)+5)
                 .attr('y', d => y(top_n+1)+5);
               
             yearText.html(~~year);
