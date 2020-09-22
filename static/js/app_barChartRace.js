@@ -20,7 +20,8 @@ function init() {
     
     const margin = {
       top: 80,
-      right: 0,
+      // right: 0,
+      right: -80,      
       bottom: 5,
       left: 0
     };
