@@ -3,25 +3,23 @@ init();
 function init() {
 
     var svg = d3.select(".barChartRace").append("svg")
-      .attr("width", "100px")
-      .attr("height", "100px");
+      .attr("width", 1000)
+      .attr("height", 1000);
       // .attr("width", 1000)
       // .attr("height", 600);
     
     
     var top_n = 10;
     var tickDuration = 3000;
-
-    var height = "100px";
-    var width = "100px";
+    var height = 1000;
+    var width = 1000;
     // var height = 600;
     // var width = 1000;
 
     
     const margin = {
       top: 80,
-      // right: 0,
-      right: -80,      
+      right: 0,     
       bottom: 5,
       left: 0
     };
