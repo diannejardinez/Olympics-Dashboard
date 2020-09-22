@@ -3,7 +3,7 @@ init();
 function init() {
 
     var svg = d3.select(".barChartRace").append("svg")
-      .attr("width", 960)
+      .attr("width", 1000)
       .attr("height", 600);
     
     var top_n = 10;
