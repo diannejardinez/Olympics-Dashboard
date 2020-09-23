@@ -71,7 +71,7 @@ function init() {
                 // .range([margin.left, width-margin.right-65]);
 
                 .domain([0, d3.max(yearSlice, d => d.Medals)])
-                .range([0, chartWidth]);
+                
 
   
       let y = d3.scaleLinear()
@@ -140,6 +140,8 @@ function init() {
           // console.log('IntervalYear: ', yearSlice);
 
           x.domain([0, d3.max(yearSlice, d => d.Medals)]); 
+          // ADDED SECTION
+          x.range([0, chartWidth]);
     
           svg.select('.xAxis')
               .transition()
