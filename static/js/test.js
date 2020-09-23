@@ -19,13 +19,10 @@ function init() {
       left: 0
     };
 
-  // Define dimensions of the chart area - ADDED NEW SECTION
-  var chartWidth = svgWidth - margin.left - margin.right;
-  var chartHeight = svgHeight - margin.top - margin.bottom;
-
   
     let barPadding = (height-(margin.bottom+margin.top))/(top_n*5);
-      
+
+
     let title = svg.append('text')
      .attr('class', 'title')
      .attr('y', 24)
@@ -65,14 +62,11 @@ function init() {
     
       // console.log('yearSlice: ', yearSlice)
   
-  // MADE EDITS HERE
+
       let x = d3.scaleLinear()
-                // .domain([0, d3.max(yearSlice, d => d.Medals)])
-                // .range([margin.left, width-margin.right-65]);
-
-                .domain([0, d3.max(yearSlice, d => d.Medals)])
+                .domain([0, d3.max(yearSlice, d => d.Medals)]) 
+                .range([margin.left, width-margin.right-65])
                 
-
   
       let y = d3.scaleLinear()
                 .domain([top_n, 0])
@@ -81,7 +75,7 @@ function init() {
       let xAxis = d3.axisTop()
                     .scale(x)
                     .ticks(width > 50 ? 3:2)
-                    .tickSize(-(height-margin.top-margin.bottom))
+                    // .tickSize(-(height-margin.top-margin.bottom))
                     .tickFormat(d => d3.format(',')(d));
   
       svg.append('g')
@@ -139,9 +133,8 @@ function init() {
     
           // console.log('IntervalYear: ', yearSlice);
 
+
           x.domain([0, d3.max(yearSlice, d => d.Medals)]); 
-          // ADDED SECTION
-          x.range([0, chartWidth]);
     
           svg.select('.xAxis')
               .transition()
