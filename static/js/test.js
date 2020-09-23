@@ -19,6 +19,9 @@ function init() {
       left: 0
     };
 
+  // Define dimensions of the chart area - ADDED NEW SECTION
+  var chartWidth = svgWidth - margin.left - margin.right;
+  var chartHeight = svgHeight - margin.top - margin.bottom;
 
   
     let barPadding = (height-(margin.bottom+margin.top))/(top_n*5);
@@ -62,9 +65,14 @@ function init() {
     
       // console.log('yearSlice: ', yearSlice)
   
+  // MADE EDITS HERE
       let x = d3.scaleLinear()
+                // .domain([0, d3.max(yearSlice, d => d.Medals)])
+                // .range([margin.left, width-margin.right-65]);
+
                 .domain([0, d3.max(yearSlice, d => d.Medals)])
-                .range([margin.left, width-margin.right-65]);
+                .range([0, chartWidth]);
+
   
       let y = d3.scaleLinear()
                 .domain([top_n, 0])
