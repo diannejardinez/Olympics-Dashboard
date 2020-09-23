@@ -76,7 +76,7 @@ function init() {
       let xAxis = d3.axisTop()
                     .scale(x)
                     .ticks(width > 50 ? 3:2)
-                    .tickSize(-(height-margin.top-margin.bottom))
+                    // .tickSize(-(height-margin.top-margin.bottom))
                     .tickFormat(d => d3.format(',')(d));
   
       svg.append('g')
