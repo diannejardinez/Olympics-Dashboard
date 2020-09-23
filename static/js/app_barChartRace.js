@@ -6,10 +6,8 @@ function init() {
       .attr("width", 1000)
       .attr("height", 600)
 
-
-    
-    var top_n = 10;
     var tickDuration = 3000;
+    var top_n = 10;
 
     var height = 600;
     var width = 1000;
@@ -21,10 +19,10 @@ function init() {
       left: 0
     };
 
-
   
     let barPadding = (height-(margin.bottom+margin.top))/(top_n*5);
-      
+
+
     let title = svg.append('text')
      .attr('class', 'title')
      .attr('y', 24)
@@ -64,14 +62,17 @@ function init() {
     
       // console.log('yearSlice: ', yearSlice)
   
+
       let x = d3.scaleLinear()
-                .domain([0, d3.max(yearSlice, d => d.Medals)])
-                .range([margin.left, width-margin.right-65]);
+                // .domain([0, d3.max(yearSlice, d => d.Medals)]) 
+                .domain([0, 205]) 
+                .range([margin.left, width-margin.right])        
   
       let y = d3.scaleLinear()
                 .domain([top_n, 0])
+
                 .range([height-margin.bottom, margin.top]);
-  
+
       let xAxis = d3.axisTop()
                     .scale(x)
                     .ticks(width > 50 ? 3:2)
@@ -133,7 +134,8 @@ function init() {
     
           // console.log('IntervalYear: ', yearSlice);
 
-          x.domain([0, d3.max(yearSlice, d => d.Medals)]); 
+          // x.domain([0, d3.max(yearSlice, d => d.Medals)]); 
+          x.domain([0, 205]) 
     
           svg.select('.xAxis')
               .transition()
@@ -261,3 +263,4 @@ function init() {
   }   
 
 }
+
