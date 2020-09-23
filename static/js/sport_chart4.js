@@ -52,12 +52,9 @@ function updateMap() {
         var selected_sport = d3.select("#sport").property("value");
         
         d3.json("../static/assets/data/sport_medals.json").then(function(data){
-
             // console.log(data)
-
             var top_countries = data.filter(d => d.sport === selected_sport)
                                 .slice(0, 10)
-
             // console.log(one_sport)
 
             var country_list = [];
