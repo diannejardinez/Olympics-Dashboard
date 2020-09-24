@@ -1,11 +1,11 @@
-https://latha-g.github.io/Olympics-Dashboard/.
+**Web Page**: https://latha-g.github.io/Olympics-Dashboard/.
 
 # Visualization Project: Olympics 1896 - 2016
 
-**Team** : Aastha Arora, Dianne Jardinez, Duong Luu, Ritika Bhansali, and Swarna Guntaka 
-=======
+**Team** : Aastha Arora, Dianne Jardinez, and Swarna Guntaka 
+ ---
 
-[Presentation](https://docs.google.com/presentation/d/15phHbRS-Q3sLNHk0l2hDTo6bSfimbzLvr5rNNoY-aXc/edit) (Google slides)
+[Presentation](https://docs.google.com/presentation/d/13dC2lsW4z3-y5Q_G1kg72aCMt5RR6wJHORb3TpNenxE/edit?usp=sharing) (Google slides)
 
 **Data Source** : [Kaggle Olympics Dataset](https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results)
 
@@ -20,5 +20,3 @@ https://latha-g.github.io/Olympics-Dashboard/.
 **Project scope** :
 - Which top 10 countries had the highest medal count by year, by country and season, and by sport
 - What it takes to be at the top for 14 sports by gender for all Olympic years and Gold medallists
-- Which sports were popular
-- The relationship between medal count and country's GDP
