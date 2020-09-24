@@ -39,8 +39,8 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="templates/chart0.html">Medals Timeline</a>
               <a class="dropdown-item" href="templates/chart1.html">Gender & Body Composition</a>
-              <a class="dropdown-item" href="templates/chart2.html">Medals VS GDP</a>
-              <a class="dropdown-item" href="templates/chart3.html">Medals World View - Seasons</a>
+<!--               <a class="dropdown-item" href="templates/chart2.html">Medals VS GDP</a> -->
+<!--               <a class="dropdown-item" href="templates/chart3.html">Medals World View - Seasons</a> -->
               <a class="dropdown-item" href="chart4.html">Medals World View - Sport</a>
             </div>
           <li class="nav-item">
@@ -81,26 +81,40 @@
 
     <div class= "container my-5">
       
-      <sectio class="my-5">
+      <section class="my-5">
         <h1 class="mb-3 text-danger">Project Objectives</h1>
-      <p class="lead">1. Analyze and create visualizations on an Olympic dataset from 1896 to 2016 to uncover which countries stay at the top overtime, by season, and by sport; what it takes for an Olympian to be at the top for each sport, sport popularity, and the relationship between Olympic Medal counts and country’s GDP.</p><br>
-        <p class="lead">2. Additionally from the Olympic dataset, machine learning was incorporated to predict the amount of medals 25 countries would obtain in the 2020 Tokyo Olympics with Linear Regression, Logistic Regression, and Auto Regressive Integrated Moving Average(ARIMA) model.</p><br>
+				<ol>
+					<li class="lead">Analyze and created visualizations on an Olympic dataset from 1896 to 2016 to uncover which countries stay at the top overtime, by season, and by sport; and by age and body composition.</li> <br>
+					<li class="lead">Additionally from the Olympic dataset, machine learning was incorporated to predict the amount of medals 25 countries would obtain in the 2020 Tokyo Olympics with Linear Regression.</li>
+				</ol>
 
 
-        <a button type="button" class="btn btn-success btn-sm mx-auto my-2" href="https://github.com/diannejardinez/Olympic_Data_Project">GitHub - Visualizations</button></a>
-        <a button type="button" class="btn btn-success btn-sm mx-auto my-2" href="https://github.com/diannejardinez/Olympic_Data_machine_learning">GitHub - Machine Learning</button></a>
-
-
-
-        <a button type="button" class="btn btn-info btn-sm mx-auto my-2" href="https://docs.google.com/presentation/d/15phHbRS-Q3sLNHk0l2hDTo6bSfimbzLvr5rNNoY-aXc/edit">Presentaion - Visualizations</button></a>
-        <a button type="button" class="btn btn-info btn-sm mx-auto my-2" href="https://docs.google.com/presentation/d/1mj6rhwKhcgTzlXBbm85ND_es7FiVOcvyNoUK_zkgKRw/edit#slide=id.g8b5e338320_0_0">Presentaion - Machine Learning</button></a>
-
-
+        <a button type="button" class="btn btn-success btn-sm mx-auto my-2" href="https://github.com/Latha-G/Olympics-Dashboard">GitHub - Visualizations and Machine Learning</button></a>
+       
+        <a button type="button" class="btn btn-info btn-sm mx-auto my-2" href="https://docs.google.com/presentation/d/13dC2lsW4z3-y5Q_G1kg72aCMt5RR6wJHORb3TpNenxE/edit?usp=sharing">Presentaion - Visualizations and Machine Learning</button></a>
       </section>
     </div>
 
     <div class="container">
       <hr>
+    </div>
+
+
+ <!-- Tools learned/used -->
+     <div class= "container my-5">
+      
+      <section class="my-5">
+        <h1 class="mb-3 text-danger">Tools and Languages</h1>
+			<ul>
+				<li class="lead">Machine Learning libraries: Pandas, Matplotlib, Scipy, Scikit-learn, NumPy</li>
+				<li class="lead">JavaScript libraries: D3.js, Plotly.js, Leaflet.js, Chart.js</li>
+				<li class="lead">Python</li>
+				<li class="lead">Tableau</li>
+				<li class="lead">Bootstrap</li>
+
+			</ul>
+
+      </section>
     </div>
 
     <!-- Team -->
@@ -110,44 +124,28 @@
 
           <div class="row">
               <div class=" d-flex justify-content-center">
-                  <div class="col-sm-6 col-lg-2 mb-4">
-                    <img class="img-thumbnail rounded-circle" src="https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraight2&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerShirt&clotheColor=Gray01&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Brown" alt="" />
-                    <h4 class="lead my-2 text-center">Aastha Arora</h4>
-                    <!-- <p class="text-muted text-center">role here</p> -->
-                    <!-- <a class="d-flex justify-content-center" href="#!"><i class="fab fa-linkedin-in"></i></a> -->
-                    <a class="d-flex justify-content-center" href="https://github.com/Aastha-Arora"><i class="fab fa-github"></i></a>
-                  </div>
+				<div class="col-sm-6 col-lg-2 mb-4">
+				<img class="img-thumbnail rounded-circle" src="static/assets/images/images_home/avatar-aa.png" alt="" />
+				<h4 class="lead my-2 text-center">Aastha Arora</h4>
+				<!-- <p class="text-muted text-center">role here</p> -->
+				<!-- <a class="d-flex justify-content-center" href="#!"><i class="fab fa-linkedin-in"></i></a> -->
+				<a class="d-flex justify-content-center" href="https://github.com/Aastha-Arora"><i class="fab fa-github"></i></a>
+				</div>
 
-                  <div class="col-sm-6 col-lg-2 mb-4">
-                    <img class="img-thumbnail rounded-circle" src="https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraightStrand&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Gray01&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Light" alt="" />
-                    <h4 class="lead my-2 text-center">Dianne Jardinez</h4>
-                      <!-- <p class="text-muted text-center">role here</p> -->
-                      <!-- <a class="d-flex justify-content-center" href="#!"><i class="fab fa-linkedin-in"></i></a> -->
-                    <a class="d-flex justify-content-center" href="https://github.com/diannejardinez"><i class="fab fa-github"></i></a>
-                  </div>
-                  <div class="col-sm-6 col-lg-2 mb-4">
-                    <img class="img-thumbnail rounded-circle" src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortFlat&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=BlazerSweater&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light" alt="" />
-                    <h4 class="lead my-2 text-center">Duong<br>Luu</h4>
-                      <!-- <p class="text-muted text-center">role here</p> -->
-                      <!-- <a class="d-flex justify-content-center" href="#!"><i class="fab fa-linkedin-in"></i></a> -->
-                    <a class="d-flex justify-content-center" href="https://github.com/Duong-Luu"><i class="fab fa-github"></i></a>
-                  </div>
-
+				<div class="col-sm-6 col-lg-2 mb-4">
+				<img class="img-thumbnail rounded-circle" src="static/assets/images/images_home/avatar-dj.png" alt="" />
+				<h4 class="lead my-2 text-center">Dianne Jardinez</h4>
+				  <!-- <p class="text-muted text-center">role here</p> -->
+				  <!-- <a class="d-flex justify-content-center" href="#!"><i class="fab fa-linkedin-in"></i></a> -->
+				<a class="d-flex justify-content-center" href="https://github.com/diannejardinez"><i class="fab fa-github"></i></a>
+				</div>
                 <div class="col-sm-6 col-lg-2 mb-4">
-                  <img class="img-thumbnail rounded-circle" src="https://avataaars.io/?avatarStyle=Transparent&topType=LongHairCurly&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=CollarSweater&clotheColor=Gray01&eyeType=Default&eyebrowType=RaisedExcitedNatural&mouthType=Smile&skinColor=Brown" alt="" />
-                    <h4 class="lead my-2 text-center">Ritika Bhansali</h4>
-                      <!-- <p class="text-muted text-center">role here</p> -->
-                      <!-- <a class="d-flex justify-content-center" href="#!"><i class="fab fa-linkedin-in"></i></a> -->
-                    <a class="d-flex justify-content-center" href="https://github.com/rbhansali07"><i class="fab fa-github"></i></a>
-                </div>
-                <div class="col-sm-6 col-lg-2 mb-4">
-                  <img class="img-thumbnail rounded-circle" src="https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraight&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=BlazerShirt&clotheColor=Gray01&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Brown" alt="" />
+                  <img class="img-thumbnail rounded-circle" src="static/assets/images/images_home/avatar-sg.png" alt="" />
                     <h4 class="lead my-2 text-center">Swarna Guntaka</h4>
                       <!-- <p class="text-muted text-center">role here</p> -->
                       <!-- <a class="d-flex justify-content-center" href="#!"><i class="fab fa-linkedin-in"></i></a> -->
                     <a class="d-flex justify-content-center" href="https://github.com/Latha-G"><i class="fab fa-github"></i></a>
-                </div>
-              </div>
+              	</div>
             </div>
           </div>
     </div>
@@ -165,19 +163,15 @@
               <div class="col-sm-6 col-lg-6 mb-5">
                 <h3 class="lead">What went well</h3>
                   <ul>
-                    <li>Creating the following charts: Racing barchart, static bar and line chart, and Leaflet map with two different layers(street map and choropleth) with Plot.js, D3.js, Chart.js, and Leaflet.js </li>
+                    <li>Creating the following Tableau visualizations for medal predictions </li>
                   </ul>
               </div>
               <div class="col-sm-6 col-lg-6 mb-5">
                 <h3 class="lead">Challenges we overcame</h3>
                 <ul>
-                  <li>Utilizing and connecting Python Flask-powered RESTful API</li><br>
-                  <li>Web browser cache accurately displaying visualizations</li><br>
-                  <li>New Machine Learning model: ARIMA</li>
-
+                  <li>Converting our data viewed from Flask-powered RESTful API to being viewed through GitHub Pages</li>
                 </ul>
-                
-
+               
               </div>
             </div>
         </div>
